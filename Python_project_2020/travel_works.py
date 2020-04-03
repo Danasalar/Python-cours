@@ -13,6 +13,7 @@ import sys
 
 
  ###########################################################
+"""
 cities_list = []
 
 num = int(input('How many cities you want to visit : '))
@@ -25,6 +26,7 @@ else:
             print('\n', cities_list)
 
 cities = set(cities_list)
+"""
 ####################################################3333333
 
 class Point(complex):
@@ -50,11 +52,11 @@ Borlänge = City(60.48000, 15.420)
 Mora = City(61.000, 14.540)
 
 #####################################
-"""
+
 
 cities_list = [Göteborg, Uppsala, Gävle]
 cities = set(cities_list)
-"""
+
 
 def alltours_tsp(cities):
     "Generate all possible tours of the cities and choose the shortest tour."
