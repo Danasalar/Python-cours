@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/env pythonStockholm
 
 #matplotlib inline
@@ -7,26 +5,10 @@
 from matplotlib import pyplot as plt
 import time
 import itertools
-import inquirer
-import random
-import sys
 
 
- ###########################################################
-"""
-cities_list = []
 
-num = int(input('How many cities you want to visit : '))
-for i in range(1, num+1):
-        print('Enter the', 'City: ', i)
-        n = str(input())
-        cities_list.append(n)
-else:
-            print('Thank you!!')
-            print('\n', cities_list)
 
-cities = set(cities_list)
-"""
 ####################################################3333333
 
 class Point(complex):
@@ -52,12 +34,85 @@ Borlänge = City(60.48000, 15.420)
 Mora = City(61.000, 14.540)
 
 #####################################
+    
+cities_list = []
+cities_listx = []
 
+print('\n','Stockholm, Göteborg, Uppsala,  Linköping, Örebro','\n','Västerås,  Gävle,    Karlstad, Borlänge,  Mora')
+num = int(input('How many of the cities above do you want to visit :'))
+for i in range(1, num+1):
+        
+        print('Enter the cities you want to visit:' , '\n','\n','1.Stockholm, 2.Göteborg, 3.Uppsala,  4.Linköping, 5.Örebro','\n','6.Västerås,  7.Gävle,    8.Karlstad, 9.Borlänge,  10.Mora', '\n', '\n','City: ', i)
+        print('\n', 'Selected cities:',cities_listx)
+        n = str(input())
+        if n =='1':
+            n = 'Stockholm'
+        elif n =='2':
+            n = 'Göteborg'
+        elif n =='3':
+            n = 'Uppsala'
+        elif n =='4':
+            n = 'Linköping'
+        elif n =='5':
+            n = 'Örebro'
+        elif n =='6':
+            n = 'Västerås'            
+        elif n=='7':
+            n = 'Gävle'
+        elif n =='8':
+            n = 'Karlstad'
+        elif n =='9':
+            n = 'Borlänge'
+        elif n =='10':
+            n =  'Mora'            
+        cities_listx.append(n)
+        
+        if n =='Stockholm' or n =='1':
+            n = Stockholm
+        elif n =='Göteborg' or n =='2':
+            n = Göteborg
+        elif n == 'Uppsala' or n =='3':
+            n = Uppsala
+        elif n == 'Linköping' or n =='4':
+            n = Linköping
+        elif n == 'Örebro' or n =='5':
+            n = Örebro
+        elif n == 'Västerås' or n =='6':
+            n = Västerås            
+        elif n == 'Gävle' or n =='7':
+            n = Gävle
+        elif n == 'Karlstad' or n =='8':
+            n = Karlstad
+        elif n == 'Borlänge' or n =='9':
+            n = Borlänge
+        elif n == 'Mora' or n =='10':
+            n =  Mora     
+        else:
+            print('Wrong choice, try again')
+            break
+        
+        cities_list.append(n)
+        
+        
+else:
+            print('\n', 'Selected cities:',cities_listx)
+            print('Thank you!!')
+            print('\n', cities_list)
+            
 
-cities_list = [Göteborg, Uppsala, Gävle]
+Mora = 'Mora'
+
 cities = set(cities_list)
 
 
+
+#####################################
+"""
+
+cities_list = [Göteborg, Uppsala, Gävle]
+cities = set(cities_list)
+"""
+    
 def alltours_tsp(cities):
     "Generate all possible tours of the cities and choose the shortest tour."
   
@@ -162,8 +217,9 @@ def plot_labeled_lines(points, *args):
             plt.plot(Xs, Ys, style)
     plt.axis('scaled'); plt.axis('off'); plt.show() 
 ###################################################################
-    
-    
+
+print('')
+print('')   
 print(alltours_tsp(cities))
 print('')
 print('')
@@ -172,9 +228,14 @@ print('Distance :', tour_length(alltours_tsp(cities))* 100, 'km')
 print('')
 print('')
 
+
+
 for city in enumerate(cities): 
+
     print (city)
     
 print('')
 print('')
 plot_tsp(alltours_tsp, cities)
+print('')
+print('')
