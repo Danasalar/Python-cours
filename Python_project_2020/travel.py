@@ -12,8 +12,20 @@ import random
 import sys
 
 
+ ###########################################################
+cities_list = []
 
+num = int(input('How many cities you want to visit : '))
+for i in range(1, num+1):
+        print('Enter the', 'City: ', i)
+        n = str(input())
+        cities_list.append(n)
+else:
+            print('Thank you!!')
+            print('\n', cities_list)
 
+cities = set(cities_list)
+####################################################3333333
 
 class Point(complex):
     x = property(lambda p: p.real)
@@ -37,28 +49,13 @@ Borlänge = City(60.48000, 15.420)
 Örebro = City(59.280, 15.180)
 Mora = City(61.000, 14.540)
 
-##########################
-
-
-############################
-
-
-cities = [
-            inquirer.List('tours',
-                 message = "Cities",
-                  choices = ['Stockholm', 'Göteborg', 'Uppsala', 'Gävle', 'Västerås', 'Linköping', 'Karlstad', 'Borlänge', 'Mora'],
-            ),
-]
-answers = inquirer.prompt(cities)
-print (answers["tours"])
-
-
 #####################################
 """
 
-cities_list = []
+cities_list = [Göteborg, Uppsala, Gävle]
 cities = set(cities_list)
 """
+
 def alltours_tsp(cities):
     "Generate all possible tours of the cities and choose the shortest tour."
   
